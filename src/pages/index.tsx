@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Courses from "@/components/Courses";
-import Instructors from "@/components/Instructors";
 import About from "@/components/About";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -57,9 +56,6 @@ export default function Home() {
         </section>
         <section id="courses" className="container-page py-16">
           <Courses onChooseLevel={onChooseLevel} />
-        </section>
-        <section id="instructors" className="container-page py-16">
-          <Instructors />
         </section>
         <section id="about" className="container-page py-16">
           <About />

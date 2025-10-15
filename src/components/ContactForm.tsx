@@ -15,6 +15,8 @@ export default function ContactForm({ selected, highlight }: Props) {
     qualification: "",
     address: "",
   });
+  const [language, setLanguage] = useState<Language | "">(selected.language ?? "");
+  const [level, setLevel] = useState<Level | "">(selected.level ?? "");
 
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -28,7 +30,7 @@ export default function ContactForm({ selected, highlight }: Props) {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const payload = { ...form, language: selected.language, level: selected.level };
+    const payload = { ...form, language: language || selected.language, level: level || selected.level };
     try {
       localStorage.setItem("amigos-enrollment", JSON.stringify(payload));
     } catch {}
@@ -71,11 +73,23 @@ export default function ContactForm({ selected, highlight }: Props) {
             </div>
             <div className="sm:col-span-1">
               <label className="text-sm">Selected Language</label>
-              <input readOnly value={selected.language ?? "-"} className="mt-1 w-full border rounded-lg px-3 py-2 bg-gray-50" />
+              <select value={language} onChange={(e)=>setLanguage(e.target.value as Language)} className="mt-1 w-full border rounded-lg px-3 py-2 bg-white">
+                <option value="">{selected.language ?? "Choose language"}</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Russian">Russian</option>
+              </select>
             </div>
             <div className="sm:col-span-1">
               <label className="text-sm">Selected Level</label>
-              <input readOnly value={selected.level ?? "-"} className="mt-1 w-full border rounded-lg px-3 py-2 bg-gray-50" />
+              <select value={level} onChange={(e)=>setLevel(e.target.value as Level)} className="mt-1 w-full border rounded-lg px-3 py-2 bg-white">
+                <option value="">{selected.level ?? "Choose level"}</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
             </div>
             <div className="sm:col-span-2">
               <button type="submit" className="btn w-full bg-[var(--brand-primary)] text-white shadow-md hover:shadow-lg">Submit Enrollment</button>

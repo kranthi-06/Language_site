@@ -14,6 +14,7 @@ export default function About() {
         At Amigo’s Foreign Languages Academy, we bring the world closer through the power of communication. Our structured courses
         help you achieve fluency step-by-step — from basics to professional mastery — guided by certified experts.
       </p>
+      {/* Stats removed as requested */}
       <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((f, idx) => (
           <motion.div

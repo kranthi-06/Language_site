@@ -17,7 +17,6 @@ export default function Navbar({ onEnrollClick }: Props) {
         <div className="hidden md:flex items-center gap-6 text-sm">
           <button onClick={scrollTo("home")} className="accent-underline">Home</button>
           <button onClick={scrollTo("courses")} className="accent-underline">Courses</button>
-          <button onClick={scrollTo("instructors")} className="accent-underline">Instructors</button>
           <button onClick={scrollTo("about")} className="accent-underline">About</button>
           <button onClick={scrollTo("contact")} className="accent-underline">Contact</button>
         </div>

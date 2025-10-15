@@ -25,16 +25,19 @@ export default function Instructors() {
             key={tutor.name}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.06, duration: 0.5 }}
+            whileHover={{ y: -6, scale: 1.03 }}
+            transition={{ delay: idx * 0.06, duration: 0.4 }}
             viewport={{ once: true }}
-            className="card p-5 text-center"
-            style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)" }}
+            className="relative p-[1px] rounded-2xl"
+            style={{ background: "linear-gradient(135deg, rgba(75,156,211,.25), #ffffff)" }}
           >
-            <img src={tutor.img} alt={tutor.name} className="mx-auto w-20 h-20 rounded-full object-cover" />
-            <h3 className="mt-3 text-lg font-semibold">{tutor.name}</h3>
-            <p className="text-sm text-[#1C1C1C]/70">{tutor.language}</p>
-            <p className="text-sm text-[#1C1C1C]/70">{tutor.experience}</p>
-            <button className="btn mt-4 bg-[var(--brand-primary)] text-white shadow-md hover:shadow-lg">Book a Demo</button>
+            <div className="card rounded-2xl p-5 text-center" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)" }}>
+              <img src={tutor.img} alt={tutor.name} className="mx-auto w-20 h-20 rounded-full object-cover" />
+              <h3 className="mt-3 text-lg font-semibold">{tutor.name}</h3>
+              <p className="text-sm text-[#1C1C1C]/70">{tutor.language}</p>
+              <p className="text-sm text-[#1C1C1C]/70">{tutor.experience}</p>
+              <button className="btn mt-4 bg-[var(--brand-primary)] text-white shadow-md hover:shadow-lg">Book a Demo</button>
+            </div>
           </motion.div>
         ))}
       </div>

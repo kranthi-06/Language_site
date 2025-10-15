@@ -31,18 +31,26 @@ export default function Hero({ onExploreCourses }: Props) {
                 Explore Courses
               </button>
             </div>
+            <div className="mt-6 flex items-center gap-4 text-[#1C1C1C]/80">
+              <a href="#" aria-label="Instagram" className="accent-underline">Instagram</a>
+              <a href="#" aria-label="Facebook" className="accent-underline">Facebook</a>
+              <a href="#" aria-label="Twitter" className="accent-underline">Twitter</a>
+              <a href="#" aria-label="LinkedIn" className="accent-underline">LinkedIn</a>
+              <a href="#" aria-label="WhatsApp" className="accent-underline">WhatsApp</a>
+            </div>
           </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative aspect-[4/3] md:aspect-square card p-6 flex items-center justify-center"
+            className="relative aspect-[4/3] md:aspect-square card overflow-hidden"
           >
-            <div className="text-center">
-              <div className="text-6xl">🌍</div>
-              <p className="mt-3 text-sm text-[#1C1C1C]/70">Global learning with warm international vibes</p>
-            </div>
+            <img
+              src="/hero-languages.png"
+              alt="Global education"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
       </div>
