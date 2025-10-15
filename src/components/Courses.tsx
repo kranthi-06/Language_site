@@ -36,7 +36,7 @@ export default function Courses({ onChooseLevel }: Props) {
             whileHover={{ y: -4, scale: 1.02 }}
             transition={{ delay: idx * 0.05, duration: 0.4 }}
             viewport={{ once: true }}
-            className="card rounded-2xl overflow-hidden"
+            className="card rounded-2xl overflow-hidden min-h-[420px]"
           >
             {/* Header */}
             <div className="px-5 pt-5 pb-6" style={{ background: "linear-gradient(180deg, #4B9CD3 0%, #6EB3E6 100%)" }}>

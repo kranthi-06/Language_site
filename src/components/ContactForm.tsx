@@ -40,10 +40,10 @@ export default function ContactForm({ selected, highlight }: Props) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-5xl mx-auto">
       <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-center">Enroll Now</h2>
       <p className="mt-2 text-center text-[#1C1C1C]/80">Fill in your details to join your chosen course.</p>
-      <div ref={cardRef} className="card mt-8 p-6 border border-[var(--brand-accent)]/30">
+  <div ref={cardRef} className="card mt-8 p-8 border border-[var(--brand-accent)]/30 max-w-4xl mx-auto">
         {submitted ? (
           <div className="text-center py-8">
             <div className="text-3xl">✅</div>

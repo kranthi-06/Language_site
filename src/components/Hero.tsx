@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = { onExploreCourses: () => void };
 
@@ -32,11 +33,9 @@ export default function Hero({ onExploreCourses }: Props) {
               </button>
             </div>
             <div className="mt-6 flex items-center gap-4 text-[#1C1C1C]/80">
-              <a href="#" aria-label="Instagram" className="accent-underline">Instagram</a>
-              <a href="#" aria-label="Facebook" className="accent-underline">Facebook</a>
-              <a href="#" aria-label="Twitter" className="accent-underline">Twitter</a>
-              <a href="#" aria-label="LinkedIn" className="accent-underline">LinkedIn</a>
-              <a href="#" aria-label="WhatsApp" className="accent-underline">WhatsApp</a>
+              <a href="https://www.instagram.com/amigosforeignlanguages/?utm_source=ig_web_button_share_sheet" aria-label="Instagram" className="accent-underline">Instagram</a>
+              
+              <a href="https://api.whatsapp.com/send/?phone=8688447525&text&type=phone_number&app_absent=0" aria-label="WhatsApp" className="accent-underline">WhatsApp</a>
             </div>
           </div>
           <motion.div
@@ -46,10 +45,13 @@ export default function Hero({ onExploreCourses }: Props) {
             viewport={{ once: true }}
             className="relative aspect-[4/3] md:aspect-square card overflow-hidden"
           >
-            <img
-              src="/hero-languages.png"
+            <Image
+              src="/hero.jpg"
               alt="Global education"
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </motion.div>
         </div>
